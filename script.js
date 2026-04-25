@@ -1,72 +1,106 @@
-// Counter Animation
-const counters = document.querySelectorAll('.counter');
-const speed = 200;
+// Navbar Scroll Effect
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
 
-const startCounter = () => {
-    counters.forEach(counter => {
-        const updateCount = () => {
-            const target = +counter.getAttribute('data-target');
-            const count = +counter.innerText;
-            const inc = target / speed;
-
-            if (count < target) {
-                counter.innerText = Math.ceil(count + inc);
-                setTimeout(updateCount, 1);
-            } else {
-                counter.innerText = target + '+';
-            }
-        };
-        updateCount();
-    });
-};
-
-// Intersection Observer for animations
-const observerOptions = {
-    threshold: 0.5
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            if (entry.target.classList.contains('stats')) {
-                startCounter();
-            }
-            entry.target.classList.add('visible');
-        }
-    });
-}, observerOptions);
-
-document.querySelectorAll('.stats').forEach(el => observer.observe(el));
-
-// Mobile Menu Toggle (Simplified for now)
-const mobileMenu = document.getElementById('mobile-menu');
+// Mobile Menu Toggle
+const mobileToggle = document.getElementById('mobile-toggle');
 const navLinks = document.querySelector('.nav-links');
 
-if (mobileMenu) {
-    mobileMenu.addEventListener('click', () => {
+if (mobileToggle) {
+    mobileToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
-        // Add CSS for .active in style.css if needed, or handle with JS
-        if (navLinks.style.display === 'flex') {
-            navLinks.style.display = 'none';
+        const icon = mobileToggle.querySelector('i');
+        if (navLinks.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
         } else {
-            navLinks.style.display = 'flex';
-            navLinks.style.flexDirection = 'column';
-            navLinks.style.position = 'absolute';
-            navLinks.style.top = '80px';
-            navLinks.style.left = '0';
-            navLinks.style.width = '100%';
-            navLinks.style.background = '#1b4332';
-            navLinks.style.padding = '2rem';
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
         }
     });
 }
 
-// Smooth Scroll
+// Close mobile menu when clicking a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        const icon = mobileToggle.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+    });
+});
+
+// Counter Animation
+const counters = document.querySelectorAll('.counter');
+const speed = 200; // The lower the slower
+
+const startCounter = (counter) => {
+    const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const inc = target / speed;
+
+        if (count < target) {
+            counter.innerText = Math.ceil(count + inc);
+            setTimeout(updateCount, 15);
+        } else {
+            counter.innerText = target + '+';
+        }
+    };
+    updateCount();
+};
+
+// Intersection Observer for Scroll Animations & Counters
+const observerOptions = {
+    threshold: 0.2,
+    rootMargin: "0px 0px -50px 0px"
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            
+            // Check if element contains counters
+            if(entry.target.classList.contains('glass-card')) {
+                const innerCounters = entry.target.querySelectorAll('.counter');
+                innerCounters.forEach(c => startCounter(c));
+            }
+            
+            // Optional: unobserve if you only want it to animate once
+            // observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+// Observe all elements with fade-in-up class
+document.querySelectorAll('.fade-in-up').forEach(el => {
+    observer.observe(el);
+});
+
+// Smooth Scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const targetId = this.getAttribute('href');
+        if(targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            const headerOffset = 80;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+  
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
+        }
     });
 });
