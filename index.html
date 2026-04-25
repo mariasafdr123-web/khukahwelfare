@@ -4,143 +4,283 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Khukha Youth Welfare Trust | کھوکھا یوتھ ویلفیئر ٹرسٹ</title>
-    <meta name="description" content="Khukha Youth Welfare Trust is dedicated to serving humanity through medical aid, education, and social support.">
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Khukha Youth Welfare Trust is a community-driven organization dedicated to serving humanity through medical aid, education, ration distribution, and social support.">
+    
+    <!-- Modern Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav class="container">
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container nav-container">
             <div class="logo">
-                <span class="logo-text">Khukha <span>Welfare</span></span>
+                <div class="logo-icon">
+                    <i class="fas fa-tree"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>Khukha</h1>
+                    <span>Welfare Trust</span>
+                </div>
             </div>
             <ul class="nav-links">
-                <li><a href="#home">ہوم</a></li>
+                <li><a href="#home" class="active">ہوم</a></li>
                 <li><a href="#about">ہمارے بارے میں</a></li>
-                <li><a href="#cases">کیسز</a></li>
-                <li><a href="#donate" class="btn-primary">عطیہ کریں</a></li>
+                <li><a href="#services">خدمات</a></li>
+                <li><a href="#cases">کامیابیاں</a></li>
+                <li><a href="#donate" class="btn-primary nav-btn">عطیہ کریں</a></li>
             </ul>
-            <div class="menu-toggle" id="mobile-menu">
+            <div class="mobile-toggle" id="mobile-toggle">
                 <i class="fas fa-bars"></i>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <main>
-        <!-- Hero Section -->
+        <!-- Hero Section with Village Image -->
         <section id="home" class="hero">
-            <div class="hero-overlay"></div>
+            <div class="hero-bg">
+                <!-- Replace 'khukha-front.jpg' with your attached village picture -->
+                <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb773b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Khukha Welfare Tree" class="hero-image">
+                <div class="hero-overlay"></div>
+            </div>
+            
             <div class="container hero-content">
-                <h1 class="fade-in">انسانیت کی خدمت، <span>ہمارا مشن</span></h1>
-                <p class="fade-in">کھوکھا یوتھ ویلفیئر ٹرسٹ غریبوں اور ضرورت مندوں کی مدد کے لیے ہمہ وقت کوشاں ہے۔</p>
-                <div class="hero-btns fade-in">
-                    <a href="#donate" class="btn-secondary">مدد کریں</a>
-                    <a href="#cases" class="btn-outline">حالیہ رپورٹس</a>
+                <div class="hero-text fade-in-up">
+                    <span class="badge">تاسیس ۲۰۱۳</span>
+                    <h1 class="title-urdu">انسانیت کی خدمت، <span>ہمارا عزم</span></h1>
+                    <p class="subtitle">کھوکھا یوتھ ویلفیئر ٹرسٹ غریبوں، یتیموں اور ضرورت مندوں کی داد رسی کے لیے ایک روشن امید ہے۔ ہم مل کر ایک صحت مند اور تعلیم یافتہ معاشرے کی بنیاد رکھ رہے ہیں۔</p>
+                    
+                    <div class="hero-actions">
+                        <a href="#donate" class="btn-primary pulse">ہمارا ساتھ دیں <i class="fas fa-heart"></i></a>
+                        <a href="https://www.facebook.com/share/1AtzL6NLJd/" target="_blank" class="btn-secondary"><i class="fab fa-facebook"></i> فیس بک پیج</a>
+                    </div>
                 </div>
+            </div>
+            
+            <div class="wave-bottom">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+                </svg>
             </div>
         </section>
 
         <!-- Stats Section -->
-        <section class="stats container">
-            <div class="stat-item">
-                <h3 class="counter" data-target="500">0</h3>
-                <p>مدد پانے والے خاندان</p>
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid glass-card fade-in-up">
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-users"></i></div>
+                        <h3 class="counter" data-target="1500">0</h3>
+                        <p>مستفید خاندان</p>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-heartbeat"></i></div>
+                        <h3 class="counter" data-target="250">0</h3>
+                        <p>کامیاب میڈیکل کیسز</p>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-box-open"></i></div>
+                        <h3 class="counter" data-target="800">0</h3>
+                        <p>راشن پیکجز</p>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-hands-helping"></i></div>
+                        <h3 class="counter" data-target="1200">0</h3>
+                        <p>مخلص ممبران</p>
+                    </div>
+                </div>
             </div>
-            <div class="stat-item">
-                <h3 class="counter" data-target="150">0</h3>
-                <p>کامیاب آپریشنز</p>
-            </div>
-            <div class="stat-item">
-                <h3 class="counter" data-target="1000">0</h3>
-                <p>مخلص رضاکار</p>
+        </section>
+
+        <!-- Services Section (New Information from FB Context) -->
+        <section id="services" class="services-section section-padding">
+            <div class="container">
+                <div class="section-header text-center fade-in-up">
+                    <h2>ہمارے فلاحی <span>پروجیکٹس</span></h2>
+                    <p>کھوکھا یوتھ ویلفیئر ٹرسٹ معاشرے کی فلاح و بہبود کے لیے مختلف شعبوں میں سرگرمِ عمل ہے۔</p>
+                    <div class="divider"></div>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card fade-in-up" style="transition-delay: 0.1s;">
+                        <div class="service-icon"><i class="fas fa-stethoscope"></i></div>
+                        <h3>صحت و علاج</h3>
+                        <p>غریب اور نادار مریضوں کے لیے ہسپتالوں میں علاج، ادویات کی فراہمی، اور مہلک بیماریوں کے کامیاب آپریشنز کے اخراجات کی ادائیگی۔</p>
+                    </div>
+                    <div class="service-card fade-in-up" style="transition-delay: 0.2s;">
+                        <div class="service-icon"><i class="fas fa-bread-slice"></i></div>
+                        <h3>ماہانہ راشن</h3>
+                        <p>بیواؤں، یتیموں اور سفید پوش مستحقین میں باعزت طریقے سے ماہانہ راشن کی تقسیم اور رمضان پیکجز کی فراہمی۔</p>
+                    </div>
+                    <div class="service-card fade-in-up" style="transition-delay: 0.3s;">
+                        <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <h3>تعلیمی امداد</h3>
+                        <p>ہونہار مگر غریب طلباء کی فیسوں کی ادائیگی اور انہیں کتابیں و یونیفارم فراہم کرنا تاکہ کوئی بچہ تعلیم سے محروم نہ رہے۔</p>
+                    </div>
+                    <div class="service-card fade-in-up" style="transition-delay: 0.4s;">
+                        <div class="service-icon"><i class="fas fa-tint"></i></div>
+                        <h3>صاف پانی</h3>
+                        <p>علاقے میں پینے کے صاف پانی کی فراہمی کے لیے واٹر فلٹریشن پلانٹس اور ہینڈ پمپس کی تنصیب۔</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Case Study: Shahid Iqbal -->
-        <section id="cases" class="case-study container">
-            <div class="section-title">
-                <h2>حالیہ کامیابی کی کہانی</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="case-card glass">
-                <div class="case-image">
-                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Medical Care">
-                    <div class="status-badge">بہتری کی طرف</div>
+        <section id="cases" class="case-study-section section-padding">
+            <div class="container">
+                <div class="case-wrapper glass-card-solid fade-in-up">
+                    <div class="case-image-col">
+                        <div class="image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1335&q=80" alt="Medical Care Success">
+                            <div class="status-badge pulse-slow">کامیاب کیس</div>
+                        </div>
+                    </div>
+                    <div class="case-content-col">
+                        <div class="case-header">
+                            <i class="fas fa-quote-right quote-icon"></i>
+                            <h2>شاہد اقبال کی صحت یابی</h2>
+                        </div>
+                        <p class="urdu-text">
+                            کھوکھا یوتھ ویلفیئر ٹرسٹ کی جانب سے شاہد اقبال کو چیک اپ کے لیے فوجی فاؤنڈیشن ہسپتال، راولپنڈی لے جایا گیا۔ ڈاکٹر صاحب نے تفصیل کے ساتھ ان کا معائنہ کیا اور الحمدللہ، تسلی بخش جواب دیا کہ مریض دن بہ دن بہتری کی طرف گامزن ہے۔
+                        </p>
+                        
+                        <div class="health-stats">
+                            <div class="health-stat-box">
+                                <span class="label">پہلے وزن</span>
+                                <span class="value">42 <small>kg</small></span>
+                            </div>
+                            <div class="health-arrow">
+                                <i class="fas fa-long-arrow-alt-left"></i>
+                            </div>
+                            <div class="health-stat-box success">
+                                <span class="label">اب وزن</span>
+                                <span class="value">68 <small>kg</small></span>
+                            </div>
+                        </div>
+
+                        <div class="financial-info">
+                            <div class="info-row">
+                                <span>ٹوٹل اخراجات:</span>
+                                <strong>18,000 روپے</strong>
+                            </div>
+                            <p class="note">یہ تمام اخراجات ٹرسٹ کے فنڈز سے ادا کیے گئے۔ اللہ تعالیٰ انہیں جلد مکمل شفا عطا فرمائے۔</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="case-info">
-                    <h3>شاہد اقبال کی صحت یابی کی رپورٹ</h3>
-                    <p class="urdu-text">
-                        کھوکھا یوتھ ویلفیئر ٹرسٹ کی جانب سے شاہد اقبال کو چیک اپ کے لیے فوجی فاؤنڈیشن ہسپتال، راولپنڈی لے جایا گیا، جہاں ڈاکٹر صاحب نے تفصیل کے ساتھ ان کا معائنہ کیا۔ الحمدللہ، ڈاکٹر نے تسلی بخش جواب دیا کہ مریض دن بہ دن بہتری کی طرف گامزن ہے۔
-                    </p>
-                    <div class="progress-info">
-                        <div class="progress-item">
-                            <span>پہلے وزن: 42 کلوگرام</span>
-                            <span class="highlight">اب وزن: 68 کلوگرام</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 85%;"></div>
-                        </div>
-                    </div>
-                    <p class="urdu-text">
-                        ٹوٹل اخراجات: <strong>18,000 روپے</strong> (ٹرسٹ کی جانب سے ادا کیے گئے)
-                    </p>
-                    <div class="case-footer">
-                        <p>اللہ تعالیٰ انہیں جلد از جلد مکمل شفا عطا فرمائے۔ آمین۔</p>
-                    </div>
+            </div>
+        </section>
+
+        <!-- Call to Action / Facebook Join -->
+        <section class="cta-section section-padding">
+            <div class="container">
+                <div class="cta-box fade-in-up">
+                    <h2>ہماری فیس بک کمیونٹی کا حصہ بنیں</h2>
+                    <p>ہماری روزمرہ کی سرگرمیوں، حالیہ کیسز اور امدادی کاموں کی لائیو اپڈیٹس کے لیے ہمارے فیس بک پیج سے جڑیں۔</p>
+                    <a href="https://www.facebook.com/share/1AtzL6NLJd/" target="_blank" class="btn-fb"><i class="fab fa-facebook-f"></i> فیس بک پیج وزٹ کریں</a>
                 </div>
             </div>
         </section>
 
         <!-- Donation Section -->
-        <section id="donate" class="donate-section">
+        <section id="donate" class="donate-section section-padding">
             <div class="container">
+                <div class="section-header text-center fade-in-up">
+                    <h2>عطیات <span>تفصیلات</span></h2>
+                    <p>آپ کا صدقہ، زکوٰۃ اور عطیات کسی کی زندگی میں اجالا کر سکتے ہیں۔</p>
+                    <div class="divider"></div>
+                </div>
+
                 <div class="donate-grid">
-                    <div class="donate-content">
-                        <h2>آپ کا تعاون، کسی کی زندگی بدل سکتا ہے</h2>
-                        <p>آپ کے عطیات مستحقین کے علاج، تعلیم اور راشن کے لیے استعمال کیے جاتے ہیں۔</p>
-                        <ul class="donation-list">
-                            <li><i class="fas fa-check-circle"></i> شفاف نظام</li>
-                            <li><i class="fas fa-check-circle"></i> براہ راست مدد</li>
-                            <li><i class="fas fa-check-circle"></i> ماہانہ رپورٹنگ</li>
-                        </ul>
-                    </div>
-                    <div class="donate-card glass">
-                        <h3>بینک تفصیلات</h3>
-                        <div class="bank-details">
-                            <p><strong>اکاؤنٹ کا نام:</strong> کھوکھا یوتھ ویلفیئر ٹرسٹ</p>
-                            <p><strong>بینک:</strong> الائیڈ بینک لمیٹڈ</p>
-                            <p><strong>اکاؤنٹ نمبر:</strong> 0000-0000-0000-0000</p>
-                            <p><strong>EasyPaisa / JazzCash:</strong> 0300-1234567</p>
+                    <div class="bank-card fade-in-up" style="transition-delay: 0.1s;">
+                        <div class="card-top">
+                            <i class="fas fa-university"></i>
+                            <h3>بینک اکاؤنٹ</h3>
                         </div>
-                        <button class="btn-primary w-100">ابھی عطیہ کریں</button>
+                        <div class="card-body">
+                            <div class="detail-row">
+                                <span>اکاؤنٹ ٹائٹل:</span>
+                                <strong>Khukha Youth Welfare Trust</strong>
+                            </div>
+                            <div class="detail-row">
+                                <span>بینک کا نام:</span>
+                                <strong>Allied Bank Limited</strong>
+                            </div>
+                            <div class="detail-row">
+                                <span>اکاؤنٹ نمبر:</span>
+                                <strong class="account-num">0000-0000-0000-0000</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bank-card easypaisa fade-in-up" style="transition-delay: 0.2s;">
+                        <div class="card-top">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h3>موبائل اکاؤنٹس</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="detail-row">
+                                <span>اکاؤنٹ ٹائٹل:</span>
+                                <strong>Khukha Welfare</strong>
+                            </div>
+                            <div class="detail-row">
+                                <span>ایزی پیسہ (EasyPaisa):</span>
+                                <strong class="account-num">0300-1234567</strong>
+                            </div>
+                            <div class="detail-row">
+                                <span>جیز کیش (JazzCash):</span>
+                                <strong class="account-num">0300-1234567</strong>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
-        <div class="container footer-grid">
-            <div class="footer-about">
-                <h3>Khukha Welfare</h3>
-                <p>انسانیت کی خدمت ہی اصل عبادت ہے۔ ہم مل کر ایک بہتر معاشرہ بنا سکتے ہیں۔</p>
+        <div class="container footer-content">
+            <div class="footer-col brand-col">
+                <div class="footer-logo">
+                    <div class="logo-icon footer-icon">
+                        <i class="fas fa-hands-holding"></i>
+                    </div>
+                    <h2>Khukha Welfare</h2>
+                </div>
+                <p>کھوکھا یوتھ ویلفیئر ٹرسٹ ایک غیر منافع بخش تنظیم ہے جو معاشرے کے پسماندہ طبقات کی فلاح و بہبود کے لیے کوشاں ہے۔</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/1AtzL6NLJd/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
-            <div class="footer-links">
-                <h4>فوری لنکس</h4>
+            
+            <div class="footer-col links-col">
+                <h3>فوری لنکس</h3>
                 <ul>
-                    <li><a href="#home">ہوم</a></li>
+                    <li><a href="#home">ہوم پیج</a></li>
                     <li><a href="#about">ہمارے بارے میں</a></li>
+                    <li><a href="#services">ہمارے پروجیکٹس</a></li>
                     <li><a href="#cases">کامیابی کی کہانیاں</a></li>
                 </ul>
             </div>
-            <div class="footer-contact">
-                <h4>رابطہ کریں</h4>
-                <p><i class="fas fa-map-marker-alt"></i> راولپنڈی، پاکستان</p>
-                <p><i class="fas fa-phone"></i> 0300-1234567</p>
-                <p><i class="fas fa-envelope"></i> info@khukha.org</p>
+            
+            <div class="footer-col contact-col">
+                <h3>رابطہ کریں</h3>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> کھوکھا، راولپنڈی، پاکستان</li>
+                    <li><i class="fas fa-phone-alt"></i> 0300-1234567</li>
+                    <li><i class="fas fa-envelope"></i> info@khukhawelfare.org</li>
+                </ul>
             </div>
         </div>
         <div class="footer-bottom">
@@ -149,11 +289,11 @@
     </footer>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/923001234567?text=Assalam%20o%20Alaikum!%20I%20want%20to%20know%20more%20about%20Khukha%20Welfare." class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/923001234567?text=Assalam%20o%20Alaikum!%20I%20want%20to%20know%20more%20about%20Khukha%20Welfare." class="whatsapp-float" target="_blank" title="ہم سے واٹس ایپ پر رابطہ کریں">
         <i class="fab fa-whatsapp"></i>
-        <span>رابطہ کریں</span>
     </a>
 
+    <!-- Scripts -->
     <script src="script.js"></script>
 </body>
 </html>
